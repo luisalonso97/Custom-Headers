@@ -4,15 +4,19 @@
  * @brief Small vector-like implementation of structs as an array of int
  * @version 0.1
  * @date 2016-04-25
- * 
+ *
  * MIT License
  *
  * @copyright Copyright (c) 2016 Luis Alonso
- * 
+ *
  */
 
 #ifndef INT_ARRAY_H
 #define INT_ARRAY_H
+
+/*
+    Added
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,26 +24,26 @@
 
 /**
  * @brief Base struct implementation of vector-like array of int
- * 
+ *
  * @vals int pointer to store dinamic array of integers
  * @size size_t size of array (Maximum capacity)
  * @current size_t current quantity of integers stored in vals
  */
 typedef struct intArray_t {
-    int *vals; 
+    int *vals;
     size_t size;
     size_t current;
 } intArray_t;
 /**
  * @brief Type definitioms to simplify use of intArray_t
- * 
+ *
  */
 typedef intArray_t INT_ARRAY;
 typedef INT_ARRAY* INT_ARRAY_T;
 
 /**
  * @brief Set up an INT_ARRAY_T vector
- * 
+ *
  * @param array Array variable INT_ARRAY_T, must be allocated before
  * @param size Size of vector
  * @return int Success
@@ -63,7 +67,7 @@ int setUpArray_int(INT_ARRAY_T array, const size_t size){
 
 /**
  * @brief Fill up an INT_ARRAY_T with console data
- * 
+ *
  * @param array Array variable INT_ARRAY_T, must be allocated before
  * @return int Success
  */
@@ -85,10 +89,10 @@ int fillArray_int(INT_ARRAY_T array) {
 
 /**
  * @brief Print an Array variable INT_ARRAY_T format "[x, y, z, ...]".
- * Only prints setted values i.e. If array->current = 3 and array->size = 5 
- * will only print the first 3 elements of the array as the other 2 haven't 
+ * Only prints setted values i.e. If array->current = 3 and array->size = 5
+ * will only print the first 3 elements of the array as the other 2 haven't
  * been setted.
- * 
+ *
  * @param array Array variable INT_ARRAY_T, must be allocated before
  * @return int Success
  */
@@ -106,7 +110,7 @@ int printArray_int(const INT_ARRAY_T array){
 
 /**
  * @brief Deallocates heap memory of an Array variable INT_ARRAY_T
- * 
+ *
  * @param array Array variable INT_ARRAY_T, must be allocated before
  * @return int Success
  */
@@ -124,7 +128,7 @@ int freeArray_int(INT_ARRAY_T array){
 
 /**
  * @brief Push value to the end of an Array variable INT_ARRAY_T
- * 
+ *
  * @param array Array variable INT_ARRAY_T, must be allocated before
  * @param val Value to be pushed
  * @return int Success
@@ -137,16 +141,16 @@ int pushValueArray_int(INT_ARRAY_T array, const int val){
             return 1;
         } else {
             return 0;
-        } 
+        }
     } else {
         return 0;
     }
 }
 
 /**
- * @brief Pops and replaces value in a given index of an Array variable 
+ * @brief Pops and replaces value in a given index of an Array variable
  * INT_ARRAY_T
- * 
+ *
  * @param array Array variable INT_ARRAY_T, must be allocated before
  * @param index Index of the value to be popped and replaced
  * @param val Value to be pushed
@@ -159,7 +163,7 @@ int popValueArray_int(INT_ARRAY_T array, const int index, const int val){
             return 1;
         } else {
             return 0;
-        } 
+        }
     } else {
         return 0;
     }
